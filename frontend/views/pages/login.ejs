@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+<div class="login-page">
+    <div class="login-card">
+        <div class="brand">
+            <span
+                class="brand-mark"><%- include('../partials/logo', { logoClass: 'vp-logo-on-mark' }) %></span>
+            <span class="brand-text">Velvet Plate</span>
+        </div>
+        <% if (!!flashError) { %>
+            <div class="alert alert-error"><%- e(flashError) %></div>
+
+        <% } %>
+        <form method="post" action="<%- e(appUrl('login')) %>" novalidate>
+            <input type="hidden" name="csrf_token" value="<%- e(csrfToken) %>">
+            <div class="form-group">
+                <label class="form-label" for="email">Email address</label>
+                <input class="form-input" id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-input" id="password" name="password" type="password" autocomplete="current-password"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+        <p class="login-footnote">
+            New to Velvet Plate? <a href="<%- e(appUrl('register')) %>">Create an account</a><br><br>
+            <!-- Demo: <strong>admin@velvetplate.com</strong> / <strong>password</strong> -->
+        </p>
+    </div>
+</div>
+<%- include('../partials/footer') %>

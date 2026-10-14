@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>(function(){var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');})();</script>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f2eb">
+<meta name="description" content="Velvet Plate — fine dining, delivery, and an exceptional culinary experience.">
+<link rel="icon" type="image/png" href="<%= assetUrl('assets/favicon.png') %>">
+<title><%= String(title || 'Velvet Plate').includes('Velvet Plate') ? title : title + ' | Velvet Plate' %></title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<%= assetUrl('css/main.css') %>">
+<% if (extraCss) { %><link rel="stylesheet" href="<%= assetUrl('css/' + extraCss) %>"><% } %>
+</head><body class="app-body"><% if (!minimalLayout) { %><a class="skip-link" href="#main-content">Skip to content</a><% } %>

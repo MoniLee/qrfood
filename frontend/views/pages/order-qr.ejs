@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+<div class="app-shell">
+    <%- include('../partials/nav') %>
+    <main id="main-content">
+        <header class="page-header">
+            <div>
+                <h1 class="page-title">Guest ordering QR</h1>
+                <p class="page-sub">Print this shared QR code so customers can browse the menu and place orders without signing in.</p>
+            </div>
+            <button class="btn btn-primary btn-sm no-print" type="button" onclick="window.print()">Print QR</button>
+        </header>
+
+        <section class="card" style="max-width:640px;margin:0 auto;">
+            <div class="card-body" style="text-align:center;">
+                <img src="<%- e(qrImage) %>" alt="QR code for the Velvet Plate ordering menu"
+                    style="width:min(320px,80vw);height:auto;background:#fff;padding:1rem;border-radius:0.75rem;">
+                <p><strong>Scan to view the menu and order</strong></p>
+                <p class="text-muted">Customers can choose dine-in and select a table, or choose delivery and enter their contact and address details. No account is required.</p>
+                <p><a href="<%- e(orderUrl) %>"><%- e(orderUrl) %></a></p>
+                <p class="text-muted no-print">For a phone to open this QR while developing locally, connect it to the same Wi-Fi as this computer. If it cannot connect, allow Node.js through Windows Firewall. For public access outside this Wi-Fi, deploy the app on a public HTTPS domain and set <code>QR_PUBLIC_URL</code> in <code>.env</code>.</p>
+            </div>
+        </section>
+    </main>
+</div>
+<%- include('../partials/footer') %>
